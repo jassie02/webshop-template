@@ -166,7 +166,7 @@ function checkoutOrder(request, response) {
   console.log("API ontvangt /api/checkout/")
 
   // lees informatie die is meegestuurd naar api via POST-request
-  var { firstName, lastName, email, phone, productIds, productAmounts } = request.body
+  var { name, adres, postcode, plaats, email, phone, productIds, productAmounts } = request.body
   console.log("data ontvangen via post-request:")
   console.log(request.body)
 
@@ -202,7 +202,10 @@ function checkoutOrder(request, response) {
 
   // maak inhoud van mailbericht
   var body = `<html><body>Hi<br><br>Bedankt voor je bestelling met nummer <b>${orderId}</b><br><br>\n` +
-    `Naam: ${firstName || '-'} ${lastName || '-'}<br>\n` +
+    `Naam: ${name || '-'} <br>\n` +
+    `Adres: ${adres || '-'} <br>\n` +
+    `Postcode: ${postcode || '-'} <br>\n` +
+    `Plaats: ${plaats || '-'} <br>\n` +
     `Email: ${email || '-'}<br>\n` +
     `Telefoon: ${phone || '-'}<br>\n` +
     articleTable +
