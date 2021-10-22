@@ -28,7 +28,7 @@ app.use(express.static('../web'))
 app.get('/api/echo', echoRequest)
 app.get('/api/categories', getCategories)
 app.get('/api/products', getProducts)
-//app.get('/api/products/:id', db.getProductById)
+app.get('/api/products/:id', getProductById)
 //app.get('/api/products/:id/related', db.getRelatedProductsById)
 // our API is not protected...so let's not expose these
 // app.post('/api/products', createProduct)
@@ -54,7 +54,6 @@ function echoRequest(request, response) {
   response.status(200).send(request.query)
 }
 
-
 function getCategories(request, response) {
   console.log('API ontvangt /api/categories/')
   // TODO: change query to make it return categories
@@ -65,8 +64,6 @@ function getCategories(request, response) {
   console.log('API verstuurt /api/categories/')
 }
 
-/*
-*/
 function getProducts(request, response) {
   console.log('API ontvangt /api/products/?', request.query)
 
@@ -84,19 +81,17 @@ function getProducts(request, response) {
   console.log('API verstuurt /api/products/')
 }
 
-/*
-const getProductById = (request, response) => {
-  const id = parseInt(request.params.id)
-  pool.query('SELECT * FROM products WHERE id = $1', [id], (error, results) => {
-    if (error) {
-      console.log(error)
-      response.status(500).json("oops")
-    } else {
-      response.status(200).json(results.rows[0])
-    }
-  })
+function getProductById(request, response) {
+  console.log('API ontvangt /api/products/:id/?', request.query)
+
+  let data = []
+  const product_id = parseInt(request.params.id)
+  const sqlOpdracht = db.prepare('SELECT * FROM products WHERE id = ?')
+  data = sqlOpdracht.all(product_id)
+  response.status(200).json(data[0])
 }
 
+/*
 const getRelatedProductsById = (request, response) => {
   const id = parseInt(request.params.id)
   // TODO: change query to return related products
@@ -166,7 +161,7 @@ function checkoutOrder(request, response) {
   console.log("API ontvangt /api/checkout/")
 
   // lees informatie die is meegestuurd naar api via POST-request
-  var { firstName, lastName, email, phone, productIds, productAmounts } = request.body
+  var { name, adres, postcode, plaats, email, phone, productIds, productAmounts } = request.body
   console.log("data ontvangen via post-request:")
   console.log(request.body)
 
@@ -202,7 +197,10 @@ function checkoutOrder(request, response) {
 
   // maak inhoud van mailbericht
   var body = `<html><body>Hi<br><br>Bedankt voor je bestelling met nummer <b>${orderId}</b><br><br>\n` +
-    `Naam: ${firstName || '-'} ${lastName || '-'}<br>\n` +
+    `Naam: ${name || '-'} <br>\n` +
+    `Adres: ${adres || '-'} <br>\n` +
+    `Postcode: ${postcode || '-'} <br>\n` +
+    `Plaats: ${plaats || '-'} <br>\n` +
     `Email: ${email || '-'}<br>\n` +
     `Telefoon: ${phone || '-'}<br>\n` +
     articleTable +
