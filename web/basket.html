@@ -27,7 +27,7 @@
     <main>
         <!-- inhoud winkelwagen -->
         <div class="container" id="index">
-          <h5>Winkelwagen</h5>
+          <h4>Winkelwagen</h4>
           <p>Hier zie je de lijst met artikelen uit je winkelwagen.</p>
           <p>Door op plus en min te drukken kun je het aantal per artikel aanpassen</p>   
           <!-- melding die wordt getoond als je winkelwagen leeg is -->
@@ -66,8 +66,10 @@
          <!-- totaal bedrag winkelwagen en knop voor Winkelwagen legen en knop voor Verder winkelen-->
         <div class="container" id="totaal">
             <p>Totaal bedrag: € <span class="sum_products">0.00</span></p>
-            <button class="btn btn-outline-dark shop-button" onClick="if(confirm('Winkelwagen legen?')) { emptyBasket(); location.href='basket.html' }">Winkelwagen legen</button> <!-- beetje lomp om hele pagina opnieuw te laden na legen -->
-            <button class="btn btn-outline-dark shop-button" onClick="location.href='index.html'">Verder winkelen</button>
+            <p>
+              <button class="btn btn-outline-dark shop-button" onClick="if(confirm('Winkelwagen legen?')) { emptyBasket(); location.href='basket.html' }">Winkelwagen legen</button> <!-- beetje lomp om hele pagina opnieuw te laden na legen -->
+              <button class="btn btn-outline-dark shop-button" onClick="location.href='index.html'">Verder winkelen</button>
+            </p>
         </div>
 
         <!-- bestelformulier -->
@@ -132,7 +134,7 @@
           </div>
           <p>...en klik op bestellen<p>
           <p>Als ik je bestelling gezien heb, dan ontvang je van mij een Tikkie. Zodra je betaald hebt, stuur ik de spullen op.</p>
-          <button type="button" class="btn btn-outline-dark shop-button" onclick="checkout()">Bestellen</button>
+          <button type="button" class="btn btn-outline-success shop-button" onclick="checkout()">Bestellen</button>
         </form>
         
         <!-- bevestiging van bestelling -->
@@ -189,7 +191,7 @@
           const product = JSON.parse(localStorage.getItem(`item_${id}`))
           const clone = template.content.cloneNode(true)
           clone.querySelector(".product_name").textContent = product.name
-          clone.querySelector(".product_price").textContent += product.price
+          clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
           clone.querySelector(".product_image").src =`images/${product.id}.jpg`
           clone.querySelector(".product_amount_show").textContent = amount             
           clone.querySelector(".product_id_show").textContent = product.id             
