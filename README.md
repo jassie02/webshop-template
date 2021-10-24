@@ -42,17 +42,17 @@ Voor en goed cijfer is het belangrijk dat je laat zien dat je uitstekend begrepe
 The basic idea is that a webpage of the shop is loaded by the browser and information on the articles in the shop are added to that depending on what the user selects.
 
 1. You open a browser and navigate to the webshop. 
-2. The browser downloads the html en css files from the server. It also downloads a piece of javascript code.
+2. The browser downloads the html and css files from the server. It also downloads a piece of javascript code.
 3. The javascript code is being executed by the browser. The javascript code connects to a link on the server that is connected to the api. This is called a REST-interface. Through the REST interface, the javascript code in the browser request information on the articles it needs to display.
 4. The api is a programm on the server which connects to the database. It requests information from the database and sends it back to the browser. The result is sent in json-format.
-5. The javascript programm in the browser looks at the json-file and add's elements containing articels in the shop to the DOM. The DOM is the model of the html files that the browser keeps in it memory and shows to the user. These elements added are displayed by the browser.
+5. The javascript programm in the browser looks at the json-file and adds elements containing articels in the shop to the DOM. The DOM is the model of the html files that the browser keeps in it memory and shows to the user. These elements added are displayed by the browser.
 
 An alternative approach would be to have the server build complete web-pages including all information on articles. This is the idea behind the php programming language. The REST-interface is gaining popularity. An advantage of REST above php is that REST allows for more responsive (interfactive) websites.
 
 # Uitleg over bestanden en mappen
 
 ## db folder
-Database with information on the arcticles in the shop
+Database with information on the arcticles in the shop. The commands in the db.sql file build te database. The database is build everytime start.sh is executed. 
 
 ## web folder
 Static (non changing) html, css en js files.
@@ -81,16 +81,17 @@ Je kunt ook functies meegeven als parameter.
 In Javascript wordt dit veelvuldig gebruikt.
 
 ## asynchrone functies
-In de meeste programmeertalen word code van boven naar beneden uitgevoerd. 
+In de meeste programmeertalen wordt code van boven naar beneden uitgevoerd. 
 In Javascript wordt soms met de volgende opdracht doorgegaan voordat de vorige klaar is. 
-Als de vorige klaar is dan wordt er een functie aangeroepen die als parameter is meegegeven aan de vorige opdracht. 
-Dit is een krachtige functionaliteit van Javascript maar voor beginnende programmeurs lastig te doorgronden. 
-Dit wordt bijvoorbeeld gebruikt bij het versturen van mail.
+Als de vorige klaar is dan wordt er een functie aangeroepen die als parameter is meegegeven aan de vorige opdracht.
+Deze functie wordt een callback genoemd.
+Het gebruik van callbacks is een krachtige functionaliteit van Javascript maar voor beginnende programmeurs lastig te doorgronden. 
+Een callback wordt bijvoorbeeld gebruikt bij het versturen van mail.
 
 ## html templates
 Je kunt Javascript gebruiken om extra elementen aan je webpagina toe te voegen nadat deze geladen is. 
-Een veelgebruikte manier daarvoor is het opnemen van een stukje template (html tussen  tussen <template> en </template>) in het html bestand
-Het template wordt niet door de broswer getoond, maar het stuk html in het template kan in Javascript worden gekopieerd (gecloned) en aangepast.
+Een veelgebruikte manier daarvoor is het opnemen van een stukje template in het html bestand (html tussen <template> en </template>)
+Het template wordt niet door de browser getoond, maar het stuk html in het template kan in Javascript worden gekopieerd (gecloned) en aangepast.
 Dit wordt bijvoorbeeld gebruikt bij het tonen van artikelen in de shop.
 
 # Documentatie 
@@ -141,18 +142,18 @@ console.log("Waarde van i is ", i);
 
 ## Fouten zoeken in de webpages
 Bekijk de console in de browser, daar kun je foutmeldingen zien.
-Je kunt in de code op strategiche plaatsen de opdracht
+Je kunt in de code op strategiche plaatsen de volgende opdracht toevoegen:
 ```
 debugger
 ```
-toevoegen. Als de console open staat dan stopt de browser met het uitvoeren van code, zodat je via de console opdrachten kunt geven. Je kunt de inhoud van variabelen bekijken met de opdracht:
+Als de console open staat dan stopt de browser met het uitvoeren van code als hij het debugger commando tegenkomt. Je kunt dan via de console opdrachten geven. Je kunt de inhoud van variabelen bekijken met de opdracht:
 ```
 console.log("Waarde van i is ", i);
 ```
 
 ## Mail configureren in Replit
 De shop mailt elke order die geplaatst is.
-Mailen werkt niet in gitpod, omdat de smtp-port dicht staat.
+Mailen werkt niet in gitpod, omdat verkeer over de smtp-port geblokkeerd wordt.
 Mailen door de shop in replit werkt als volgt.
 Zet de environment variabelen (slotje links in replit menu)
 ```
@@ -168,7 +169,7 @@ Als je gmail gebruikt met tweestapsverificatie:<br>
 Maak een app-wachtwoord (account->beveiliging) en zet dat in GMAIL_PASSWORD
 
 Test je emailconfiguratie:<br>
-Doe een bestelling en kijk naar de console in replit. 
+Doe een bestelling en kijk naar de console in replit of gitpod. 
 De api meldt op de console als mail succesvol is verzonden en geeft een foutmelding als het niet is gelukt.
 
 ## Random images maken
@@ -185,7 +186,7 @@ done
 
 ## Posting data 
 
-onze backend code kan alleen 'x-www-form-urlencoded' aan, voor 'multipart/form-data' default Form-data format moeten we de 'formidable' lib gebruiken 
+Onze backend code kan alleen 'x-www-form-urlencoded' aan, voor 'multipart/form-data' default Form-data format moeten we de 'formidable' lib gebruiken. 
 (https://www.npmjs.com/package/formidable)
 
 
