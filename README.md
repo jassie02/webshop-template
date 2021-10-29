@@ -123,6 +123,20 @@ https://yarnpkg.com/getting-started
 
 # Howto 
 
+## Wijzigingen aanbrengen in de database
+Wijzig de sql-commando's in het bestand db/my.sql<br>
+Start de server opnieuw (zie elders hoe dat moet) nadat de sql-commando's gewijzigd zijn. Zo zorg je ervoor dat de database opnieuw gemaakt wordt door de nieuwe sql-commando's uit te voeren.
+
+## Server opnieuw starten
+Replit: druk op de groene "Run"-knop<br>
+Gitpod: <br>
+Gebruik het terminal window waar de server-berichten te zien zijn.
+Stop de server door typen van [CRTL]+[C].<br>
+Start de server met het volgene commando
+```
+bash start.sh
+```
+
 ## Fouten zoeken in de database
 Open de database in de Shell met het volgende commando
 ```
@@ -132,13 +146,15 @@ Je kunt met SQL commanda's zien wat er in de database staat. bijvoorbeeld
 ```
 SELECT * from Products;
 ```
+Je sqlite3 afsluiten door [CTRL]+[D] te typen
 
 ## Fouten zoeken in de api
-Bekijk de console op de server (replit of gitpod), daar kun je foutmeldingen zien.
-Je kunt in de code opdrachten toevoegen die inhoud van variabelen afdrukken. Bijvoorbeeld:
+Bekijk de console (replit) of terminal (gitpod) van de server, daar kun je foutmeldingen zien.
+Je kunt in de code in de map api opdrachten toevoegen die inhoud van variabelen afdrukken. Bijvoorbeeld:
 ```
 console.log("Waarde van i is ", i);
 ```
+Start de server opnieuw (zie elders hoe dat moet) nadat de code gewijzigd is.
 
 ## Fouten zoeken in de webpages
 Bekijk de console in de browser, daar kun je foutmeldingen zien.
