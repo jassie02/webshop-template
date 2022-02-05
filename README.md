@@ -98,33 +98,6 @@ Een veelgebruikte manier daarvoor is het opnemen van een stukje template in het 
 Het template wordt niet door de browser getoond, maar het stuk html in het template kan in Javascript worden gekopieerd (gecloned) en aangepast.
 Dit wordt bijvoorbeeld gebruikt bij het tonen van artikelen in de shop.
 
-# Documentatie 
-
-* tutorial building a REST-api with postgressDB + jsnode + jsexpress<br>
-https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
-* serving static files with jsexpress<br>
-https://expressjs.com/en/starter/static-files.html
-* basic html & css & javascript reference<br>
-https://www.w3schools.com
-* basic sql course<br>
-https://www.khanacademy.org/computing/computer-programming/sql
-* sqlite3 gebruiken op in Shell<br>
-https://www.sqlite.org/cli.html
-* better-sqlite library gebruiken in nodejs (javascript)<br>
-https://github.com/JoshuaWise/better-sqlite3/blob/HEAD/docs/api.md
-* shoppping basket lokaal opslaan<br>
-google op local storage javascript basket
-* bestelling mailen<br>
-video met gebruik van nodemailer (module in javascript) vind je hier: https://youtu.be/Va9UKGs1bwI
-* replit online editor en hosting ontwikkelomgeving<br>
-https://docs.replit.com/
-* gitpod online editor en hosting ontwikkelomgeving<br>
-https://www.gitpod.io/docs/
-* introdution to docker (kennis alleen nodig als je de repo heftig wilt aanpassen)<br>
-https://docker-curriculum.com
-* yarn (kennis alleen nodig als je de repo heftig wilt aanpassen)<br>
-https://yarnpkg.com/getting-started
-
 # Howto 
 
 ## Wijzigingen aanbrengen in de database
@@ -156,7 +129,7 @@ Meer handige commando's:<br>
 - sqlite3 afsluiten: `.quit`
 
 ## Fouten zoeken in de api
-Je kunt het antwoord van de api testen door achter de link naar je webshop /api/products te typen, bijvoorbeeld:
+Je kunt het antwoord van de api testen door achter de link naar je webshop /api/products te typen, bijvoorbeeld:<br>
 `https://webshop-docent-gee.vangeest.repl.co/api/products` (voor replit, pas aan voor jouw webshop-adres)<br>
 `https://....gitpod.io/api/products` (voor gitpod)
 
@@ -216,6 +189,32 @@ done
 Onze backend code kan alleen 'x-www-form-urlencoded' aan, voor 'multipart/form-data' default Form-data format moeten we de 'formidable' lib gebruiken. 
 (https://www.npmjs.com/package/formidable)
 
+# Documentatie 
+
+* tutorial building a REST-api with postgressDB + jsnode + jsexpress<br>
+https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
+* serving static files with jsexpress<br>
+https://expressjs.com/en/starter/static-files.html
+* basic html & css & javascript reference<br>
+https://www.w3schools.com
+* basic sql course<br>
+https://www.khanacademy.org/computing/computer-programming/sql
+* sqlite3 gebruiken op in Shell<br>
+https://www.sqlite.org/cli.html
+* better-sqlite library gebruiken in nodejs (javascript)<br>
+https://github.com/JoshuaWise/better-sqlite3/blob/HEAD/docs/api.md
+* shoppping basket lokaal opslaan<br>
+google op local storage javascript basket
+* bestelling mailen<br>
+video met gebruik van nodemailer (module in javascript) vind je hier: https://youtu.be/Va9UKGs1bwI
+* replit online editor en hosting ontwikkelomgeving<br>
+https://docs.replit.com/
+* gitpod online editor en hosting ontwikkelomgeving<br>
+https://www.gitpod.io/docs/
+* introdution to docker (kennis alleen nodig als je de repo heftig wilt aanpassen)<br>
+https://docker-curriculum.com
+* yarn (kennis alleen nodig als je de repo heftig wilt aanpassen)<br>
+https://yarnpkg.com/getting-started
 
 # Credits
 - avs123a<br>
