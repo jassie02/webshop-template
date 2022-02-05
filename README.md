@@ -61,7 +61,11 @@ Static (non changing) html, css en js files.
 js files which are being executed on the server when the api is called
 
 ## .replit
+Bestand met de configuratie voor replit<br>
 We use a bash-repl (language="bash" in .replit file), because bash has sqlite3 and nodejs installed. Downside of bash-repl: The nodejs-repl installs packages automatically by scanning your code. In the bash-repl we have to maintain dependencies in a packages file manually. 
+
+## .gitpod.yml
+Bestand met de configuratie voor replit<br>
 
 ## start.sh
 This file is executed everytime you click on "Run" in replit. What it does is:
@@ -142,13 +146,20 @@ Open de database in de Shell met het volgende commando
 ```
 sqlite3 db/my.db
 ```
-Je kunt met SQL commanda's zien wat er in de database staat. bijvoorbeeld
-```
-SELECT * from Products;
-```
-Je sqlite3 afsluiten door [CTRL]+[D] te typen
+Je kunt met SQL commanda's zien wat er in de database staat.<br>
+Bijvoorbeeld het commando: `SELECT * from Products;` (vergeet de ; aan het einde niet)
+
+Meer handige commando's:<br>
+- Een lijstje met tabellen `.tables`
+- De namen van de kolommen in de tabel products: `.schema products`
+- De eerste 3 rijen van de tabel products: `SELECT * FROM products LIMIT 3;`
+- sqlite3 afsluiten: `.quit`
 
 ## Fouten zoeken in de api
+Je kunt het antwoord van de api testen door achter de link naar je webshop /api/products te typen, bijvoorbeeld:
+`https://webshop-docent-gee.vangeest.repl.co/api/products` (voor replit, pas aan voor jouw webshop-adres)<br>
+`https://....gitpod.io/api/products` (voor gitpod)
+
 Bekijk de console (replit) of terminal (gitpod) van de server, daar kun je foutmeldingen zien.
 Je kunt in de code in de map api opdrachten toevoegen die inhoud van variabelen afdrukken. Bijvoorbeeld:
 ```
