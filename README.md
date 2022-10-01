@@ -1,7 +1,7 @@
 # 5HV-webshop-template (*vervang door de naam van je webshop*)
 
 Deze webshop is gebaseerd op het template voor 5HV van het Emmauscollege Rotterdam. <br>
-Je kunt het template zelf uitproberen in Replit: 
+Je kunt het template zelf uitproberen in Replit (selecteer bash als "language" voordat je op de import knop drukt): 
 [Run on Repl.it](https://replit.com/github/emmauscollege/5HV-webshop-template) <br>
 of in Gitpod (gitpod is zonder mailen van orders en zonder permanent hosten):
 [Run on Gitpod](https://gitpod.io/#https://github.com/emmauscollege/5HV-webshop-template)
