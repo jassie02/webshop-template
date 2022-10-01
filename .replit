@@ -1,2 +1,12 @@
-language="bash"
-run="bash start.sh"
+run = ["bash", "start.sh"]
+#language = "bash"
+
+# The default file opened in the editor.
+entrypoint = "README.md"
+
+hidden=[".config", ".gitpod.yml", ".gitignore",".package.json","yarn.lock","LICENSE"]
+
+[nix]
+
+[nix.channel]
+channel = "stable-22_05"
