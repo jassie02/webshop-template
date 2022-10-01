@@ -211,7 +211,7 @@ video met gebruik van nodemailer (module in javascript) vind je hier: https://yo
 https://docs.replit.com/
 * gitpod online editor en hosting ontwikkelomgeving<br>
 https://www.gitpod.io/docs/
-* introdution to docker (kennis alleen nodig als je de repo heftig wilt aanpassen)<br>
+* introduction to docker (kennis alleen nodig als je de repo heftig wilt aanpassen)<br>
 https://docker-curriculum.com
 * yarn (kennis alleen nodig als je de repo heftig wilt aanpassen)<br>
 https://yarnpkg.com/getting-started
