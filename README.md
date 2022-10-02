@@ -1,39 +1,36 @@
-# 5HV-webshop-template (*vervang door de naam van je webshop*)
+Deze repo is onderdeel van het vak informatica op het Emmauscollege Rotterdam.
 
-Deze webshop is gebaseerd op het template voor 5HV van het Emmauscollege Rotterdam. <br>
-Je kunt het template zelf uitproberen in Replit (selecteer bash als "language" voordat je op de import knop drukt): 
-[Run on Repl.it](https://replit.com/github/emmauscollege/5HV-webshop-template) <br>
-of in Gitpod (gitpod is zonder mailen van orders en zonder permanent hosten):
-[Run on Gitpod](https://gitpod.io/#https://github.com/emmauscollege/5HV-webshop-template)
+[Meer info over deze opdracht](https://informatica.emmauscollege.nl/)
 
-### In mijn webshop vind je: 
-- *wat je verkoopt*
-### Deze webshop is gemaakt door: 
-- *naam van leerling 1* 
--  *naam van leerling 2*
+## *zet hier de naam van je webshop*
 
-# Mijn aanpak
+Gemaakt door: *zet hier de leerlingnummers en voornamen van de leerlingen in je groepje*
+
+Wij verkopen: *zet hier een korte beschrijving van wat er in je webshop te koop is*
+
+## Planning
 Werk de planning af van boven naar beneden<br>
+Vul de planning aan en stel bij terwijl je aan de opdracht werkt
 Geef aan met [x] welke onderdelen af zijn
 
-Stap 1: Start 
+### Stap 1: Start 
 - [ ] Pas de achtergrondkleur van de shop aan (zie mapje web)
 - [ ] Pas de titel van het eerste product in de shop aan (zie mapje db)
 - [ ] Pas de query aan zodat getoonde producten gesorteerd worden op naam (zie mapje api)
 
-Stap 2: Database opzetten 
+### Stap 2: Database opzetten 
 - [ ] Maak tabellen en velden (CREATE TABLE commando) in je database waarin alle informatie kan worden opgeslagen die je over je producten wilt tonen.<br>
 Tip: je kunt een multipliciteitendiagram gebruiken als tussenstap voor je database-ontwerp
 - [ ] Vul de tabellen met informatie (INSERT commando)
 - [ ] Voeg eventueel plaatjes toe (web/images map)
 
-Stap 3: API aanpassen 
+### Stap 3: API aanpassen 
 - [ ] Pas de API aan, zodat je alle informatie uit je database kunt opvragen via de API
 
-Stap 4: Website aanpassen 
+### Stap 4: Website aanpassen 
 - [ ] Pas de website aan, zodat alle informatie getoond wordt.
 
-Stap x: Webshop verder verbeteren
+### Stap 5: Webshop verder verbeteren
 - [ ] Herhaal stap 2 t/m 4 om je webshop verder te verbeteren. 
 Voor en goed cijfer is het belangrijk dat je laat zien dat je uitstekend begrepen hebt hoe je een webshop moet opzetten.
 
