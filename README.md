@@ -2,6 +2,12 @@ Deze repo is onderdeel van het vak informatica op het Emmauscollege Rotterdam.
 
 [Meer info over deze opdracht](https://informatica.emmauscollege.nl/)
 
+# Letop als je replit gebruikt!
+1. Als je de repo importeert in replit, dan moet je de taal "bash" kiezen.
+Dit kies je nadat je de link naar de repo hebt opgeven en voordat je op de import knop drukt.
+2. Het voorbeeld van je webshop in Webview toont geen artikelen.
+Open het voorbeeld in een apart tab (klik in Webview op icoontje met vierkant en pijl).
+
 # Basis uitleg hoe de webshop werkt
 The basic idea is that a webpage of the shop is loaded by the browser and information on the articles in the shop are added to that depending on what the user selects.
 
@@ -105,9 +111,6 @@ console.log("Waarde van i is ", i);
 Start de server opnieuw (zie elders hoe dat moet) nadat de code gewijzigd is.
 
 ## Fouten zoeken in de webpages
-Als je replit gebruikt: het voorbeeld van je webshop in Webview toont geen artikelen.
-Open het voorbeeld in een apart tab (klik in Webview op icoontje met vierkant en pijl).
-
 Bekijk de console in de browser, daar kun je foutmeldingen zien.
 Je kunt in de code op strategiche plaatsen de volgende opdracht toevoegen:
 ```
