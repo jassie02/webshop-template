@@ -1,5 +1,4 @@
-language = "bash"
-run = ["bash", "start.sh"]
+run = ["bash", "main.sh"]
 
 # The default file opened in the editor.
 entrypoint = "README.md"
