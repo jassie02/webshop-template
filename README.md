@@ -105,6 +105,9 @@ console.log("Waarde van i is ", i);
 Start de server opnieuw (zie elders hoe dat moet) nadat de code gewijzigd is.
 
 ## Fouten zoeken in de webpages
+Als je replit gebruikt: het voorbeeld van je webshop in Webview toont geen artikelen.
+Open het voorbeeld in een apart tab (klik in Webview op icoontje met vierkant en pijl).
+
 Bekijk de console in de browser, daar kun je foutmeldingen zien.
 Je kunt in de code op strategiche plaatsen de volgende opdracht toevoegen:
 ```
