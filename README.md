@@ -71,7 +71,7 @@ Dit wordt bijvoorbeeld gebruikt bij het tonen van artikelen in de shop.
 # Howto 
 
 ## Wijzigingen aanbrengen in de database
-Wijzig de sql-commando's in het bestand db/my.sql<br>
+Wijzig de sql-commando's in het bestand db/create.sql<br>
 Start de server opnieuw (zie elders hoe dat moet) nadat de sql-commando's gewijzigd zijn. Zo zorg je ervoor dat de database opnieuw gemaakt wordt door de nieuwe sql-commando's uit te voeren.
 
 ## Server opnieuw starten
