@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "express": "^4.17.1",
-    "better-sqlite3": "^7.4.3",
-    "nodemailer": "^6.6.5"
+    "better-sqlite3": "^9.0.9",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.7"
   },
-  "name": "5V-webshop",
-  "version": "1.0.0",
+  "name": "5v-webshop",
+  "version": "1.0.1",
   "main": "start.sh",
   "scripts": {
     "start": "bash start.sh"
