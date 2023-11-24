@@ -12,7 +12,8 @@
         //"preLaunchTask": "update db",
         //"program": "${workspaceFolder}/api/index.js"
         "preLaunchTask": "start server",
-        "program": "${workspaceFolder}/api/index.js"
+        "program": "${workspaceFolder}/api/index.js",
+        "console": "integratedTerminal"
       }
     ]
   }  
