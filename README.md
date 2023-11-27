@@ -2,12 +2,6 @@ Deze repo is onderdeel van het vak informatica op het Emmauscollege Rotterdam.
 
 [Meer info over deze opdracht](https://informatica.emmauscollege.nl/)
 
-# Letop als je replit gebruikt!
-1. Als je de repo importeert in replit, dan moet je de taal "bash" kiezen.
-Dit kies je nadat je de link naar de repo hebt opgeven en voordat je op de import knop drukt.
-2. Het voorbeeld van je webshop in Webview toont geen artikelen.
-Open het voorbeeld in een apart tab (klik in Webview op icoontje met vierkant en pijl).
-
 # Basis uitleg hoe de webshop werkt
 The basic idea is that a webpage of the shop is loaded by the browser and information on the articles in the shop are added to that depending on what the user selects.
 
@@ -18,6 +12,93 @@ The basic idea is that a webpage of the shop is loaded by the browser and inform
 5. The javascript programm in the browser looks at the json-file and adds elements containing articels in the shop to the DOM. The DOM is the model of the html files that the browser keeps in it memory and shows to the user. These elements added are displayed by the browser.
 
 An alternative approach would be to have the server build complete web-pages including all information on articles. This is the idea behind the php programming language. The REST-interface is gaining popularity. An advantage of REST above php is that REST allows for more responsive (interfactive) websites.
+
+# Uitleg hoe je de webshop kunt aanpassen 
+
+## Server opnieuw starten
+__Codespaces__ <br>
+Gebruik het terminal window te zien zijn.<br>
+Stop de server door typen van [CRTL]+[C].<br>
+Start de server met het volgene commando.<br>
+```
+bash start.sh
+```
+Om de server te (her)starten kun je ook de start knop gebruiken die je ziet als je op het "run en debug" icoon in de iconenbalk links op het scherm drukt.
+
+__Replit__<br>
+druk op de groene "Run"-knop<br>
+
+__Gitpod__<br>
+Gebruik het terminal window waar de server-berichten te zien zijn.
+Stop de server door typen van [CRTL]+[C].<br>
+Start de server met het volgene commando
+```
+bash start.sh
+```
+## Wijzigingen aanbrengen in de database
+Wijzig de sql-commando's in het bestand db/create.sql<br>
+Start de server opnieuw (zie elders hoe dat moet) nadat de sql-commando's gewijzigd zijn. Zo zorg je ervoor dat de database opnieuw gemaakt wordt door de nieuwe sql-commando's uit te voeren.
+
+## Fouten zoeken in de database
+Open de database in de terminal met het volgende commando
+```
+sqlite3 db/my.db
+```
+Je kunt met SQL commanda's zien wat er in de database staat.<br>
+Bijvoorbeeld het commando: `SELECT * from Products;` (vergeet de ; aan het einde niet)
+
+Meer handige commando's:<br>
+- Een lijstje met tabellen `.tables`
+- De namen van de kolommen in de tabel products: `.schema products`
+- De eerste 3 rijen van de tabel products: `SELECT * FROM products LIMIT 3;`
+- sqlite3 afsluiten: `.quit`
+
+## Fouten zoeken in de api
+Je kunt het antwoord van de api testen door achter de link naar je webshop /api/products te typen, bijvoorbeeld:<br>
+`https://....-8080.app.github.dev/api/products` (voor codespaces, pas aan voor jouw webshop-adres)<br>
+`https://....repl.co/api/products` (voor replit, pas aan voor jouw webshop-adres)<br>
+`https://....gitpod.io/api/products` (voor gitpod, pas aan voor jouw webshop-adres)
+
+Bekijk de terminal (codespaces en gitpod) of console (replit) van de server, daar kun je foutmeldingen zien.
+Je kunt in de code in de map api opdrachten toevoegen die inhoud van variabelen afdrukken. Bijvoorbeeld:
+```
+console.log("Waarde van i is ", i);
+```
+Start de server opnieuw (zie elders hoe dat moet) nadat de code gewijzigd is.
+
+## Fouten zoeken in de webpages
+Bekijk de console in de browser, daar kun je foutmeldingen zien.<br>
+In Chrome open je de console in het menu -> Weergave -> Ontwikkelaar -> JavaScript-console. <br>
+Je kunt in de code op strategische plaatsen de volgende opdracht toevoegen:
+```
+debugger
+```
+Als de console open staat dan stopt de browser met het uitvoeren van code als hij het debugger commando tegenkomt. Je kunt dan via de console opdrachten geven. Je kunt de inhoud van variabelen bekijken met de opdracht:
+```
+console.log("Waarde van i is ", i);
+```
+
+## Mail configureren in Replit
+__er zijn afgelopen jaar dingen in replit veranderd, waardoor je je webshop op dit moment geen mail kunt laten sturen__
+De shop mailt elke order die geplaatst is.
+Mailen werkt niet in gitpod, omdat verkeer over de smtp-port geblokkeerd wordt.
+Mailen door de shop in replit werkt als volgt.
+Zet de environment variabelen (slotje links in replit menu)
+```
+GMAIL_EMAIL=<email account>
+GMAIL_PASSWORD=<email wachtwoord>
+ORDER_MAIL_TO=<jouw email waar je orders ontvangt>
+```
+
+Als je gmail gebruikt zonder tweestapsverificatie:<br>
+Zet in gmail (account->beveiliging) gebruik van minder veilige apps aan
+
+Als je gmail gebruikt met tweestapsverificatie:<br>
+Maak een app-wachtwoord (account->beveiliging) en zet dat in GMAIL_PASSWORD
+
+Test je emailconfiguratie:<br>
+Doe een bestelling en kijk naar de console in replit of gitpod. 
+De api meldt op de console als mail succesvol is verzonden en geeft een foutmelding als het niet is gelukt.
 
 # Uitleg over bestanden en mappen
 
@@ -30,18 +111,21 @@ Static (non changing) html, css en js files.
 ## api folder
 js files which are being executed on the server when the api is called
 
-## .replit
-Bestand met de configuratie voor replit<br>
+## start.sh
+Dit bestand bevat de commando's om de webshop (opnieuw) te starten. Je voert dit bestand uit in de terminal met het commando
+```
+bash start.sh
+```
+
+## .devcontainer en .vscode folder
+Mappen met de configuratie voor Codespaces
+
+## .replit en replit.nix
+Bestanden met de configuratie voor replit<br>
 We use a bash-repl (language="bash" in .replit file), because bash has sqlite3 and nodejs installed. Downside of bash-repl: The nodejs-repl installs packages automatically by scanning your code. In the bash-repl we have to maintain dependencies in a packages file manually. 
 
 ## .gitpod.yml
 Bestand met de configuratie voor replit<br>
-
-## start.sh
-This file is executed everytime you click on "Run" in replit. What it does is:
-1. (re)install packages using the package.json file
-2. (re) create the databasefile db/my.db
-3. start the server for the api en webpages
 
 # Uitleg van code
 De code is voorzien van commentaar op punten waar de werking misschien niet eenvoudig te volgen is.
@@ -68,96 +152,13 @@ Een veelgebruikte manier daarvoor is het opnemen van een stukje template in het 
 Het template wordt niet door de browser getoond, maar het stuk html in het template kan in Javascript worden gekopieerd (gecloned) en aangepast.
 Dit wordt bijvoorbeeld gebruikt bij het tonen van artikelen in de shop.
 
-# Howto 
+# Vraag en antwoord
 
-## Wijzigingen aanbrengen in de database
-Wijzig de sql-commando's in het bestand db/create.sql<br>
-Start de server opnieuw (zie elders hoe dat moet) nadat de sql-commando's gewijzigd zijn. Zo zorg je ervoor dat de database opnieuw gemaakt wordt door de nieuwe sql-commando's uit te voeren.
-
-## Server opnieuw starten
-Replit: druk op de groene "Run"-knop<br>
-Gitpod: <br>
-Gebruik het terminal window waar de server-berichten te zien zijn.
-Stop de server door typen van [CRTL]+[C].<br>
-Start de server met het volgene commando
-```
-bash start.sh
-```
-
-## Fouten zoeken in de database
-Open de database in de Shell met het volgende commando
-```
-sqlite3 db/my.db
-```
-Je kunt met SQL commanda's zien wat er in de database staat.<br>
-Bijvoorbeeld het commando: `SELECT * from Products;` (vergeet de ; aan het einde niet)
-
-Meer handige commando's:<br>
-- Een lijstje met tabellen `.tables`
-- De namen van de kolommen in de tabel products: `.schema products`
-- De eerste 3 rijen van de tabel products: `SELECT * FROM products LIMIT 3;`
-- sqlite3 afsluiten: `.quit`
-
-## Fouten zoeken in de api
-Je kunt het antwoord van de api testen door achter de link naar je webshop /api/products te typen, bijvoorbeeld:<br>
-`https://webshop-docent-gee.vangeest.repl.co/api/products` (voor replit, pas aan voor jouw webshop-adres)<br>
-`https://....gitpod.io/api/products` (voor gitpod)
-
-Bekijk de console (replit) of terminal (gitpod) van de server, daar kun je foutmeldingen zien.
-Je kunt in de code in de map api opdrachten toevoegen die inhoud van variabelen afdrukken. Bijvoorbeeld:
-```
-console.log("Waarde van i is ", i);
-```
-Start de server opnieuw (zie elders hoe dat moet) nadat de code gewijzigd is.
-
-## Fouten zoeken in de webpages
-Bekijk de console in de browser, daar kun je foutmeldingen zien.
-Je kunt in de code op strategiche plaatsen de volgende opdracht toevoegen:
-```
-debugger
-```
-Als de console open staat dan stopt de browser met het uitvoeren van code als hij het debugger commando tegenkomt. Je kunt dan via de console opdrachten geven. Je kunt de inhoud van variabelen bekijken met de opdracht:
-```
-console.log("Waarde van i is ", i);
-```
-
-## Mail configureren in Replit
-De shop mailt elke order die geplaatst is.
-Mailen werkt niet in gitpod, omdat verkeer over de smtp-port geblokkeerd wordt.
-Mailen door de shop in replit werkt als volgt.
-Zet de environment variabelen (slotje links in replit menu)
-```
-GMAIL_EMAIL=<email account>
-GMAIL_PASSWORD=<email wachtwoord>
-ORDER_MAIL_TO=<jouw email waar je orders ontvangt>
-```
-
-Als je gmail gebruikt zonder tweestapsverificatie:<br>
-Zet in gmail (account->beveiliging) gebruik van minder veilige apps aan
-
-Als je gmail gebruikt met tweestapsverificatie:<br>
-Maak een app-wachtwoord (account->beveiliging) en zet dat in GMAIL_PASSWORD
-
-Test je emailconfiguratie:<br>
-Doe een bestelling en kijk naar de console in replit of gitpod. 
-De api meldt op de console als mail succesvol is verzonden en geeft een foutmelding als het niet is gelukt.
-
-## Random images maken
-
-```
-count=1
-while [[ $count -lt 100 ]]
-do
- echo $count
- count=$[$count+1]
- wget -O $count.jpg https://picsum.photos/200/300
-done
-```
-
-## Posting data 
-
-Onze backend code kan alleen 'x-www-form-urlencoded' aan, voor 'multipart/form-data' default Form-data format moeten we de 'formidable' lib gebruiken. 
-(https://www.npmjs.com/package/formidable)
+## Letop als je replit gebruikt!
+1. Als je de repo importeert in replit, dan moet je de taal "bash" kiezen.
+Dit kies je nadat je de link naar de repo hebt opgeven en voordat je op de import knop drukt.
+2. Het voorbeeld van je webshop in Webview toont geen artikelen.
+Open het voorbeeld in een apart tab (klik in Webview op icoontje met vierkant en pijl).
 
 # Documentatie 
 
