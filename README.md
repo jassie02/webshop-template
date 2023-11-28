@@ -159,7 +159,7 @@ Op school zit er een fout in het netwerk, gebruik daar dit trucje om de port naa
 
 - Knip de link van je Codespace boven in je browser naar een nieuw tabblad (de link lijkt op https://xxxxxx-xxxxxx-xxxxxx.github.dev)
 - Verander de link in https://xxxxxx-xxxxxx-xxxxxx-8080.app.github.dev (dus voeg -8080.app toe)
-- Je ziet nu de webpagina die je in je codespace gemaakt hebt.
+- Je ziet nu de webpagina die je in je codespace gemaakt hebt. Vergeet niet de server te starten.
     
 ## Letop als je replit gebruikt!
 1. Als je de repo importeert in replit, dan moet je de taal "bash" kiezen.
