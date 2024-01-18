@@ -16,5 +16,5 @@ if [ -f db/my.db ]; then
 fi
 sqlite3 db/my.db < db/create.sql
 
-echo starting api and static webserver in the background
-node api/index.js &
+echo starting api and static webserver (in the foreground, otherwise replit will kill it)
+node api/index.js
