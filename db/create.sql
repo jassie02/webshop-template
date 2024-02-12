@@ -10,10 +10,6 @@ CREATE TABLE products (
   price NUMERIC(10, 2)
 );
 
- CREATE TABLE products (
-  hoeveelheid int,
-  
- )
 
 --
 -- populate with data
